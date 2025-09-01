@@ -3,6 +3,7 @@ import { db } from "./database";
 import * as PersonRepository from "./PersonRepository";
 
 async function main() {
+  //? Create Table
   await db.schema
     .createTable("person")
     .addColumn("id", "integer", (cb) =>
@@ -15,14 +16,19 @@ async function main() {
       cb.notNull().defaultTo(sql`current_timestamp`)
     )
     .execute();
+  //? Create person to person table
   //@ts-ignore
   await PersonRepository.createPerson({
     first_name: "Tanaka",
     last_name: "Tarou",
     gender: "man",
   });
+
+  //? Get all columns from person table
   const getAll = await db.selectFrom("person").selectAll().execute();
   console.log("getAll result:", getAll);
+
+  //? Get column that first name is "Tanaka" from person table
   const findOne = await db
     .selectFrom("person")
     .selectAll()
