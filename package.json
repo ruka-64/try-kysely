@@ -1,0 +1,18 @@
+{
+  "name": "try-kysely",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "ruka-64",
+  "license": "MIT",
+  "packageManager": "pnpm@10.13.1",
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "kysely": "^0.28.5",
+    "tsx": "^4.20.5"
+  }
+}
